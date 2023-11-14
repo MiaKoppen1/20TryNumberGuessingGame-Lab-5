@@ -13,7 +13,7 @@ public:
 
 	int guess;
 	int maxTries = 20;
-	int tries = 0; //initializing the tries
+	int tries = 0; 
 	int win = 0;
 	int loss = 0;
 	bool winGame;

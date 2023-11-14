@@ -3,44 +3,46 @@
 #include <string>
 #include <sstream>
 
+
 void NumGame::welcomeMessage()
-{
+	{
 	cout << "Welcome to the Number Guessing Game!" << endl; cout << endl;
-}
+	}
 
 void NumGame::firstGuess()
-{
+	{
 	int maxTries = 20;
 	int randomNumber = rand() % 100 + 0; // 0 to 100
 	int loss = 0;
 	bool winGame = false;
 	int guess;
 
-	for (int tries = 0; tries < maxTries; ++tries) {
-		cout << "Type in your guess: ";
+	for (int tries = 0; tries < maxTries; ++tries) 
+		{
+		cout << "type in your guess: ";
 		cin >> guess;
 		cout << endl;
 
 		if (guess != randomNumber) //if the guess is not equal to the random number
-		{
+			{
 			cout << "You guessed incorrectly, ";
 			cout << "guess again" << endl;
 			loss++;
-		}
+			}
 		else //if the number is correct
-		{
+			{
 			cout << "the answer was: " << randomNumber << endl;
 			cout << "you guessed the number in: " << (tries + 1) << "tries!" << endl;
 			win++;
 			winGame = true;
 			break;
+			}
 		}
+
 	}
 
-}
-
 void NumGame::playGame()
-{
+	{
 	int maxTries = 20; //initialize maxTries
 	int win = 0; //initiate win
 	int loss = 0; //initiate loss
@@ -51,18 +53,18 @@ void NumGame::playGame()
 	int iwinGame = rand() % 10 + 1;
 	int iloseGame = rand() % 10 + 1;
 	int iplayAgain = rand() % 10 + 1;
-
-	while (tries < maxTries) //while the number of attempts is less than 20
+		
+	while(tries < maxTries) //while the number of attempts is less than 20
 	{
-		cout << "guess: "; cin >> guess; cout << endl; //prompts the user to type in their guess
+		cout << "type in your guess: "; cin >> guess; cout << endl; //prompts the user to type in their guess
 
-		if (guess != randomNumber) //if the guess is not equal to the random number
+		if (guess != randomNumber)//if the guess is not equal to the random number
 		{
 			cout << "You guessed incorrectly, ";
 			cout << "guess again" << endl;
 			loss++;
 		}
-		
+
 		else //if the number is correct, and the user won
 		{
 			winGame = true;
@@ -121,15 +123,17 @@ void NumGame::playGame()
 			}
 		}
 		tries++;
-	}
+		}
+
 	if (tries == maxTries)
-	{
+		{
 		cout << "last guess: ";
 		cin >> guess;
-	}
+		}
 	if (!winGame) //if the user did not win the game
-	{
+		{
 		cout << endl; //put a space before the next line
+
 		if (guess != randomNumber)
 		switch (iloseGame) //display one of 10 messages if the user loses the game
 		{
@@ -213,14 +217,15 @@ void NumGame::playGame()
 			cout << "total wins: "; cout << win; cout << "  ";
 			cout << "total losses: "; cout << loss;
 			break;
+			}
 		}
-	}
-}
+		}
 
 void NumGame::playAgain() //if the user wants to play again, this function is called
-{
+	{
 	cout << endl;
 	int iplayAgain = rand() % 10 + 1;
+
 	switch (iplayAgain) //outputs 1 of the 10 messages if the user wants to play again
 	{
 	case 1: cout << "alright! let's play again" << endl;
@@ -244,6 +249,6 @@ void NumGame::playAgain() //if the user wants to play again, this function is ca
 	case 10: cout << "great!" << endl;
 		break;
 	}
-}
+	}
 
 

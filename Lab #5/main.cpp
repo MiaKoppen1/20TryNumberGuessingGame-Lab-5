@@ -40,16 +40,22 @@ int main()
 	cout << " "; cin >> goAgain; //asks the user to input yes or no
 
 	if (goAgain == "yes") //if the user wants to play again
-	{
+		{
 		numbergame.playAgain(); //gamee starts over and random message is output to the screen
 		cout << endl;
 		main(); //go back to the beginning
-	}
+		do
+			{
+			 numbergame.welcomeMessage();
+			} 
+		while (goAgain == "yes");
+
+		}
 	else //if the user says no to playing again
-	{
+		{
 		cout << endl;
 		cout << "\033[1;31mGAME OVER \033[0m" << endl; //says game over 
-	}
+		}
 
 	return 0;
 }
